@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Tech Whispers</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Tech Whispers</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2026, Cristian Bidea.</copyright>
+    <lastBuildDate>Mon, 05 Jan 2026 11:45:38 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog With Hugo</title>
+      <link>http://localhost:1313/posts/blog-with-hugo/</link>
+      <pubDate>Mon, 05 Jan 2026 11:45:38 +0200</pubDate>
+      <guid>http://localhost:1313/posts/blog-with-hugo/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Some content about blogging with Hugo&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
