@@ -18,7 +18,7 @@ But I've always had one gripe: to create or view shaders, you have to go to Shad
 ShaderToy doesn't enable embedding, and that's fine; it's not their goal. But I always thought it shouldn't be too hard to create a widget that lets you embed shader code and render it in real time, right on the page. You can see an example of `FShader Widget` in action below:
 
 <script src="../fshader-widget.js" type="module"></script>
-<shader-widget width="320" height="320">
+<shader-widget canvas-width="320px" canvas-height="240px">
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord / iResolution.xy;
     vec3 col = 0.5 + 0.5 * cos(iTime + uv.xyx + vec3(0, 2, 4));
@@ -26,3 +26,4 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 }
 </shader-widget>
 
+You can find an example of how to use the widget at https://github.com/phaser/fshader-widget/blob/main/dist/index.html.
