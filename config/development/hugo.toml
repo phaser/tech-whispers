@@ -1,0 +1,10 @@
+# Preview-only: make drafts/ appear as blog content when running `hugo server`.
+[[module.mounts]]
+  source = "content"
+  target = "content"
+[[module.mounts]]
+  source = "drafts"
+  target = "content/blog"
+[[module.mounts]]
+  source = "static"
+  target = "static"

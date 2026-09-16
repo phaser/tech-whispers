@@ -72,32 +72,78 @@ you use locally.
 | Path | Content |
 | --- | --- |
 | `content/_index.md` | Home page |
-| `content/blog/` | Blog posts, one Markdown file for each post |
+| `content/blog/` | Published blog posts, one Markdown file for each post |
+| `drafts/` | Unpublished posts. The production build ignores this folder. |
 | `content/tools.md` | The "Tools I Use" page |
 | `static/` | Files that Hugo copies without change: images, `fshader-widget.js`, favicon |
 | `archetypes/default.md` | Front matter template for a new page |
 | `hugo.toml` | Site configuration |
+| `config/development/hugo.toml` | Preview-only configuration. It mounts `drafts/` into the blog. |
 | `.github/workflows/hugo.yml` | Build and deploy to GitHub Pages |
 | `themes/hugo-bearblog/` | Theme submodule. Do not edit. |
 
-## Add a post
+## Write, preview, publish
+
+### 1. Create the article
 
 ```sh
 hugo new content blog/my-new-post.md
+mv content/blog/my-new-post.md drafts/
 ```
 
-Edit the front matter. Set `draft = false` to publish the post. Example front matter:
+`hugo new` always writes into `content/blog/`, also in the development environment. The second
+command moves the file to `drafts/`, where the production build cannot see it. Use plain `mv`:
+`git mv` fails on a file that Git does not track yet.
+
+Front matter of a post:
 
 ```toml
 +++
 title = "My New Post"
 date = "2026-01-09T16:29:09+02:00"
-description = "One sentence about the post."
+description = "One sentence about the post. It becomes the social preview text."
 tags = ['shaders', 'webgl']
 +++
 ```
 
 The permalink configuration puts each post at `/<slug>/`, not at `/blog/<slug>/`.
+
+### 2. Preview
+
+```sh
+hugo server
+```
+
+Open http://localhost:1313/tech-whispers/. The path is part of `baseURL`, so `http://localhost:1313/`
+alone returns 404.
+
+`hugo server` uses the development environment, which mounts `drafts/` into `content/blog`. A draft
+gets the same URL that it gets after publication.
+
+### 3. Publish
+
+```sh
+mv drafts/my-new-post.md content/blog/
+git add -A && git commit -m "Add the post about X"
+git push
+```
+
+The push starts the deploy workflow. The site is live about 40 seconds later.
+
+## Drafts
+
+`drafts/` holds the posts that are not ready.
+
+| Command | Sees `drafts/` |
+| --- | --- |
+| `hugo server` | yes |
+| `hugo server -e production` | no |
+| `hugo`, and the deploy workflow | no |
+
+You do not need `draft = true` in a file that is in `drafts/`. The folder does that work.
+
+`hugo server` writes the pages to `public/` and serves that directory. After you change the
+environment, delete `public/` first, or the server answers with the pages of the previous build.
 
 ## Shader widget
 
