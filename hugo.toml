@@ -1,13 +1,13 @@
 # Base URL used when generating links to your pages
 # Set to the URL for your site
-baseURL = "https://example.com"
+baseURL = "https://phaser.github.io/tech-whispers/"
 
 # The name of this wonderful theme ;-).
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
 title = "Tech Whispers"
-author = "Cristian Bida"
+author = "Cristian Bidea"
 copyright = "Copyright © 2026, Cristian Bidea."
 languageCode = "en-US"
 
@@ -23,7 +23,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
-  description = "Hugo + Bear = :heart:"
+  description = "Notes on shaders, graphics, build systems and tooling, by Cristian Bidea."
 
   # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
   # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.

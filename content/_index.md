@@ -8,4 +8,4 @@ I'm Cristian, a software engineer based in Bucharest, Romania! I’ve been writi
 
 I’ve worked across very different domains: games, networking tools, data-heavy applications, developer platforms, and large-scale automation on macOS, Linux, and Windows. These days my work sits at the intersection of infrastructure, tooling, and reliability: build systems, CI/CD, cross-environment orchestration, and the glue code that makes complex systems behave consistently.
 
-* [Tools I Use](tools)
+* [Tools I Use](tools/)

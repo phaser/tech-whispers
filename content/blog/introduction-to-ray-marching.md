@@ -1,5 +1,6 @@
 +++
 title = "Introduction to Ray Marching"
+draft = true
 date = "2026-01-12T16:29:09+02:00"
 description = "Just my notes on how to do ray marching"
 tags = ['shadertoy', 'shaders', 'javascript', 'webgl']

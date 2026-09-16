@@ -1,6 +1,9 @@
 +++
 title = "Tools I Use"
+date = "2026-09-16"
 +++
+
+*Updated: 16 Sep, 2026. This page is a work in progress.*
 
 ## Terminal tools
 

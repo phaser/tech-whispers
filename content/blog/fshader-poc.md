@@ -5,7 +5,7 @@ description = "A web component that renders and edits ShaderToy-style fragment s
 tags = ['shadertoy', 'shaders', 'javascript', 'webgl']
 +++
 
-<img src="/images/github-mark.png" width="32" height="32" alt="GitHub" style="background: white; clip-path: circle(); vertical-align: middle;" /> [FShader Widget Github Repository](https://github.com/phaser/fshader-widget)
+<img src="../images/github-mark.png" width="32" height="32" alt="GitHub" style="background: white; clip-path: circle(); vertical-align: middle;" /> [FShader Widget Github Repository](https://github.com/phaser/fshader-widget)
 
 I've always been a fan of [ShaderToy](https://www.shadertoy.com/) and its co-founder
 [Inigo Quilez](https://iquilezles.org/). I remember seeing one of his early presentations (sadly I can't find it anymore) about the incredible things you can do with fragment shaders alone.
@@ -16,7 +16,7 @@ I know you can embed ShaderToy via `iframe`, but I wanted something more flexibl
 
 Below you can see a simple shader example. Type in the box. The canvas updates as you type.
 
-<script src="/fshader-widget.js" type="module"></script>
+<script src="../fshader-widget.js" type="module"></script>
 <shader-widget canvas-width="320px" canvas-height="240px">
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = fragCoord / iResolution.xy;
