@@ -20,11 +20,11 @@ machines. If a tool is here, it is on every Mac I use.
 
 I want my terminal to look good and work well, but I don't want to spend an evening configuring it on every new machine. The "Oh My *" projects give attractive defaults and stay easy to customize.
 
-* [Oh My Tmux](https://github.com/gpakosz/.tmux) — a complete `.tmux.conf` with a readable status bar.
+* [Oh My Tmux](https://github.com/gpakosz/.tmux) — a complete `.tmux.conf`. It got me started. These days my tmux runs Catppuccin instead.
+* [Catppuccin](https://github.com/catppuccin/tmux) — the Macchiato flavour, on tmux. CPU, session, uptime and battery in the status bar.
 * [Oh My Bash](https://github.com/ohmybash/oh-my-bash) — themes and plugins for bash.
 * [Oh My Posh](https://ohmypo.sh/) — a prompt theme engine. It works with any shell.
 * [Oh My Zsh](https://ohmyz.sh/) — themes and plugins for zsh. This is the one my Macs run, with the agnoster theme.
-* [Catppuccin](https://github.com/catppuccin/tmux) — the Macchiato flavour, on tmux. CPU, session and battery in the status bar.
 
 ### Enhancers
 
