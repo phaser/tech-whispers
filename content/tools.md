@@ -4,7 +4,7 @@ date = "2026-09-16"
 description = "The terminal tools, editors and command line helpers I install on a new machine, taken from my nix-darwin configuration."
 +++
 
-*Updated: 16 Sep, 2026. This page is a work in progress.*
+*Updated: 17 Sep, 2026. This page is a work in progress.*
 
 Most of this list is not from memory. It is what my nix-darwin configuration installs on both of my
 machines. If a tool is here, it is on every Mac I use.
@@ -42,6 +42,23 @@ I want my terminal to look good and work well, but I don't want to spend an even
 
 My Git defaults come from the same configuration: `pull.rebase`, `fetch.prune`,
 `push.autoSetupRemote`, and `zdiff3` conflict style.
+
+### Hooks
+
+* [prek](https://github.com/j178/prek) — a Git hook runner in Rust. It is a drop-in replacement for pre-commit.
+
+prek reads `.pre-commit-config.yaml`, or its own `prek.toml`. Most of my repositories use `prek.toml`.
+
+These are the hooks I run through it:
+
+* [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks) — trailing whitespace, end of file, JSON, YAML and XML checks, mixed line endings, large files, merge conflict markers and private keys. This set is in almost every repository.
+* `dotnet format` — a local hook in the C# repositories. It formats the solution before the commit.
+* [ruff](https://docs.astral.sh/ruff/) — format and lint for Python, in one tool.
+* [black](https://github.com/psf/black) and [isort](https://pycqa.github.io/isort/) — the same job, in the older Python repositories.
+* [pyright](https://github.com/microsoft/pyright) — type check. It runs on demand, not on every commit.
+* [yamllint](https://github.com/adrienverge/yamllint) — the pipeline files are YAML, and a bad indent is expensive.
+* [cspell](https://cspell.org/) — English spelling for this site. The project words live in `cspell.json`.
+* Local scripts — the file naming rules and the lint script of each project.
 
 ## Editors
 

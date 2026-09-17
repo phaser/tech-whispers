@@ -40,12 +40,12 @@ The function `map` contains only a SDF (Signed Distance Function) for a sphere b
 
 {{< figure
   src="../images/raymarching.png"
-  alt="Raymarching in one image"
-  caption="Raymarching in one image"
+  alt="Ray marching in one image"
+  caption="Ray marching in one image"
   class="ma0 w-75"
 >}}
 
-In the figure above, you can see raymarching being explained but also some light computations involving the surface normal. The raymarching process returns whether we intersect the SDF or not and if we intersect we use the intersection ray, by computing the intersection position, to compute the surface normal and then the lighting for that pixel, taking into consideration all the lights in the scene (in this example only the sun and sky).
+In the figure above, you can see ray marching being explained but also some light computations involving the surface normal. The ray marching process returns whether we intersect the SDF or not and if we intersect we use the intersection ray, by computing the intersection position, to compute the surface normal and then the lighting for that pixel, taking into consideration all the lights in the scene (in this example only the sun and sky).
 
 <shader-widget canvas-width="320px" canvas-height="240px">
 
