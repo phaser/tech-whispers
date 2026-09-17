@@ -1,0 +1,7 @@
+repos:
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v10.2.0
+    hooks:
+      - id: cspell
+        name: spell check (English)
+        types: [markdown]

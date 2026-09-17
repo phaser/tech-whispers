@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en,en-GB",
+  "dictionaries": ["softwareTerms", "bash", "filetypes", "companies", "node", "typescript"],
+  "ignorePaths": ["themes/**", "public/**", "resources/**", "static/**"],
+  "ignoreRegExpList": [
+    "Urls",
+    "Email",
+    "/`[^`]*`/g",
+    "/^```[\\s\\S]*?^```/gm",
+    "/<shader-widget[\\s\\S]*?<\\/shader-widget>/g"
+  ],
+  "words": [
+    "acli",
+    "agnoster",
+    "autotools",
+    "bearblog",
+    "Catppuccin",
+    "Cristian",
+    "dbos",
+    "Drepper",
+    "exiftool",
+    "fshader",
+    "Ghostty",
+    "Goldmark",
+    "Inigo",
+    "Macchiato",
+    "Mandelbulb",
+    "nixfmt",
+    "ocrmypdf",
+    "pandoc",
+    "Panthera",
+    "Quilez",
+    "raymarching",
+    "rustup",
+    "shadertoy",
+    "smoothstep",
+    "statix",
+    "superfile",
+    "TOTP"
+  ]
+}
