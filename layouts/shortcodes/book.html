@@ -1,0 +1,43 @@
+{{- $cover := .Get "cover" -}}
+{{- $alt := .Get "alt" -}}
+{{- $path := "" -}}
+{{- $config := false -}}
+{{- $problem := "" -}}
+{{- if not $cover -}}
+  {{- $problem = "the book shortcode needs a cover parameter" -}}
+{{- else if or (not (hasPrefix $cover "/")) (in $cover "..") -}}
+  {{- $problem = printf "the cover parameter needs a site path, like /images/books/name.jpg, not %q" $cover -}}
+{{- else -}}
+  {{- $path = strings.TrimPrefix "/" $cover -}}
+  {{- $file := printf "static/%s" $path -}}
+  {{- if not (fileExists $file) -}}
+    {{- $problem = printf "the book shortcode cannot find the cover file %s" $file -}}
+  {{- else -}}
+    {{- $result := try (images.Config $file) -}}
+    {{- with $result.Err -}}
+      {{- $problem = printf "the book shortcode cannot read the cover file %s: %s" $file . -}}
+    {{- else -}}
+      {{- $config = $result.Value -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (not $problem) (not $alt) -}}
+  {{- $problem = printf "the book shortcode needs an alt parameter for %s" $cover -}}
+{{- end -}}
+{{- with $problem -}}
+  {{- if hugo.IsProduction -}}
+    {{- errorf "%s: %s" . $.Position -}}
+  {{- else -}}
+    {{- warnf "%s: %s" . $.Position -}}
+  {{- end -}}
+{{- end -}}
+<div class="book">
+{{- with $config }}
+  {{- $height := 260 }}
+  {{- $width := math.Round (mul .Width (div (float $height) .Height)) }}
+  <div class="book-cover">
+    <img src="{{ $path | relURL }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" loading="{{ if eq $.Ordinal 0 }}eager{{ else }}lazy{{ end }}">
+  </div>
+{{- end }}
+  <div class="book-text">{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+</div>

@@ -10,3 +10,4 @@ I’ve worked across very different domains: games, networking tools, data-heavy
 
 * [Tools I Use](tools/)
 * [Papers I Like](papers-i-like/)
+* [Books I Love](books-i-love/)

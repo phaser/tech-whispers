@@ -75,10 +75,12 @@ you use locally.
 | `content/blog/` | Published blog posts, one Markdown file for each post |
 | `drafts/` | Unpublished posts. The production build ignores this folder. |
 | `content/tools.md` | The "Tools I Use" page |
+| `content/books-i-love.md` | The "Books I Love" page |
 | `static/` | Files that Hugo copies without change: images, `fshader-widget.js`, favicon |
 | `archetypes/default.md` | Front matter template for a new page |
 | `hugo.toml` | Site configuration |
 | `config/development/hugo.toml` | Preview-only configuration. It mounts `drafts/` into the blog. |
+| `layouts/` | Site-level templates: the `book` shortcode, and the extra CSS in `custom_head.html` |
 | `.github/workflows/hugo.yml` | Build and deploy to GitHub Pages |
 | `themes/hugo-bearblog/` | Theme submodule. Do not edit. |
 
@@ -164,6 +166,43 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
 Goldmark runs with `unsafe = true`, so Hugo keeps the raw HTML in Markdown.
 
+## Book covers
+
+The `book` shortcode puts the cover of a book beside the text about the book. Use it like this:
+
+```
+{{< book cover="/images/books/code-petzold.jpg" alt="Code, second edition, by Charles Petzold" >}}
+**[Book title](https://example.org/)**
+*Author, edition, year.*
+
+The text about the book. Plain Markdown works here: links, **bold** and lists.
+{{< /book >}}
+```
+
+| Parameter | Value |
+| --- | --- |
+| `cover` | Site path of the cover image. Required. |
+| `alt` | Alternative text for the cover. Required. |
+
+Rules:
+
+* Store each cover in `static/images/books/`. Use a lowercase name with dashes.
+* Write `cover` as a site path that starts with a slash, `/images/books/name.jpg`. The shortcode
+  refuses a relative path and a path that holds `..`, because Hugo then drops the
+  `/tech-whispers/` part of `baseURL` and the cover becomes a 404.
+* Start the shortcode on its own line, after an empty line. Without the empty line Goldmark puts
+  the `div` of the shortcode inside a paragraph.
+* The shortcode reads the size of the file and renders the cover 260px high, in a 210px column.
+  It writes `width` and `height` on the `img` element, so the text does not jump when the cover
+  loads. The first cover on a page loads eagerly, the rest load lazily.
+* Each of these authoring mistakes is a warning in `hugo server` and an error in the production
+  build: no `cover`, no `alt`, a relative path, a file that does not exist, and a file that Hugo
+  cannot read as an image. The preview keeps the text of the entry, so an unfinished entry stays
+  readable.
+
+`layouts/partials/custom_head.html` holds the style of the two columns. On a narrow screen the text
+moves under the cover.
+
 ## License
 
 Content and code: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See `LICENSE`.
@@ -173,3 +212,7 @@ The theme keeps its own license in `themes/hugo-bearblog/LICENSE`.
 PantheraLeo1359531, published under
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/) on
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mandelbulb_OpenCL_225MPx_20201202.png).
+
+The files in `static/images/books/` are the covers of the books on the "Books I Love" page. Each
+publisher owns its cover. The images identify the books, and the license of this repository does
+not cover them.
