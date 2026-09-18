@@ -13,8 +13,6 @@ tags = ["DistributedSystems","Books", "ComputerScience"]
 This is a book I wish I had when I was 12 years old. I remember discussing with my friends the little we knew about computers and we were
 so hungry for information, but we had no way of getting it. When I read this book, I instantly knew this was the book I wanted to give to my 12-year-old
 self if I could go back in time. Charles's style is so friendly that it is impossible not to grasp the concepts in the way he explains them.
-
-[Book site](https://codehiddenlanguage.com/)
 {{< /book >}}
 
 {{< book cover="/images/books/crafting-interpreters.jpg" alt="Crafting Interpreters, by Robert Nystrom" >}}
