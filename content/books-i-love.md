@@ -11,7 +11,7 @@ tags = ["DistributedSystems","Books", "ComputerScience"]
 *Charles Petzold, second edition, 2022.*
 
 This is a book I wish I had when I was 12 years old. I remember discussing with my friends the little we knew about computers and we were
-so hungry for information, but we had no way of getting it. When I read this book, I instantly knew this was the book I wanted to give to my 12-year-old
+so hungry for information, but we had no way of getting it (Romania was [a bit of a wild place](https://en.wikipedia.org/wiki/Romanian_Revolution) in the 90s). When I read this book, I instantly knew this was the book I wanted to give to my 12-year-old
 self if I could go back in time. Charles's style is so friendly that it is impossible not to grasp the concepts in the way he explains them.
 {{< /book >}}
 
