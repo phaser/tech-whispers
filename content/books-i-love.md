@@ -2,7 +2,7 @@
 title = "Books I Love"
 date = "2026-09-17T12:29:02+03:00"
 description = "Technical books I love"
-tags = ["distributed systems","books", "computer science"]
+tags = ["DistributedSystems","Books", "ComputerScience"]
 +++
 
 {{< book cover="/images/books/code-petzold.jpg" alt="Code, second edition, by Charles Petzold" >}}
@@ -26,7 +26,7 @@ I tried learning about compilers and interpreters via tutorials and really dense
 
 Robert Nystrom is one of my favourite technical authors, because he explains things in such a way that I genuinely believe it is impossible not to understand him. He writes and edits his books with a care that is impossible to ignore, and I am grateful for it on every page.
 
-Compiler enthusiasts or even better programmers might interpret what I said as a skill issue, and it may very well be, but I think this skill is super valuable outside of compilers and interpreters not to make it accessible to a wider audience.
+Compiler enthusiasts or even better programmers might interpret what I said as a skill issue, and it may very well be, but I think this skill is too valuable outside of compilers and interpreters to not make it accessible to a wider audience.
 {{< /book >}}
 
 {{< book cover="/images/books/designing-data-intensive-applications.jpg" alt="Designing Data-Intensive Applications, by Martin Kleppmann" >}}
