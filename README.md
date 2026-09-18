@@ -82,6 +82,7 @@ you use locally.
 | `config/development/hugo.toml` | Preview-only configuration. It mounts `drafts/` into the blog. |
 | `layouts/` | Site-level templates: the `book` shortcode, and the extra CSS in `custom_head.html` |
 | `.github/workflows/hugo.yml` | Build and deploy to GitHub Pages |
+| `scripts/publish.sh` | Move a draft into `content/blog/` and set its date to now |
 | `themes/hugo-bearblog/` | Theme submodule. Do not edit. |
 
 ## Write, preview, publish
@@ -125,10 +126,17 @@ gets the same URL that it gets after publication.
 ### 3. Publish
 
 ```sh
-mv drafts/my-new-post.md content/blog/
+scripts/publish.sh my-new-post
 git add -A && git commit -m "Add the post about X"
 git push
 ```
+
+`scripts/publish.sh` does two steps: it sets `date` in the front matter to the current time, and it
+moves the file to `content/blog/`. Give the name with or without the `.md` suffix. The script uses
+`git mv` when Git already tracks the file.
+
+Do not copy the file instead of moving it. `hugo server` mounts `drafts/` into `content/blog`, so a
+copy makes two pages with the same slug.
 
 The push starts the deploy workflow. The site is live about 40 seconds later.
 

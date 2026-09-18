@@ -1,4 +1,11 @@
 <style>
+  /* The theme gives every <code> 2px of padding, for inline code. Chroma wraps
+     each highlighted line in a display:flex span, so that padding adds an empty
+     line box and pushes the code one row below its line number. */
+  pre code {
+    padding: 0;
+  }
+
   .book {
     display: flex;
     flex-wrap: wrap;
